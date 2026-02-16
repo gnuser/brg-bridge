@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 900" width="1420" height="900" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9673a6" />
+    </marker>
+    <marker id="arrow-purple-rev" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#9673a6" />
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#82b366" />
+    </marker>
+    <marker id="arrow-green-rev" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#82b366" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1420" height="900" fill="#fafafa" rx="8" />
+
+  <!-- Title -->
+  <text x="710" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">BRG Bridge — Cross-Chain Architecture (LayerZero V2)</text>
+
+  <!-- ===== ETHEREUM GROUP ===== -->
+  <rect x="40" y="65" width="330" height="350" rx="12" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2" />
+  <text x="205" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Ethereum (Home Chain)</text>
+
+  <!-- BridgeToken -->
+  <rect x="65" y="110" width="280" height="65" rx="8" fill="#fff" stroke="#6c8ebf" stroke-width="1.5" />
+  <text x="205" y="133" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">BridgeToken</text>
+  <text x="205" y="150" text-anchor="middle" font-size="11" fill="#666">(ERC20 — BRG) · 1M supply · 18 decimals</text>
+  <text x="205" y="167" text-anchor="middle" font-size="10" fill="#999">0x2F774239ca92404C3Cf9D2363a2e2624Af19dA60</text>
+
+  <!-- Faucet -->
+  <rect x="65" y="188" width="280" height="32" rx="6" fill="#ffe6cc" stroke="#d6b656" stroke-width="1" stroke-dasharray="4 3" />
+  <text x="205" y="209" text-anchor="middle" font-size="11" fill="#8a6d3b"><tspan font-weight="bold">faucet()</tspan> — 1,000 BRG per call (testnet)</text>
+
+  <!-- Arrow down -->
+  <line x1="205" y1="220" x2="205" y2="240" stroke="#999" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="260" y="234" font-size="9" fill="#999">approve + lock</text>
+
+  <!-- BridgeOFTAdapter -->
+  <rect x="65" y="245" width="280" height="65" rx="8" fill="#fff" stroke="#6c8ebf" stroke-width="1.5" />
+  <text x="205" y="268" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">BridgeOFTAdapter</text>
+  <text x="205" y="285" text-anchor="middle" font-size="11" fill="#666">(lock / unlock)</text>
+  <text x="205" y="302" text-anchor="middle" font-size="10" fill="#999">0xECC80fc532b80F0Fa9D160F90921EE7b94374e16</text>
+
+  <!-- Arrow down -->
+  <line x1="205" y1="310" x2="205" y2="335" stroke="#999" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="253" y="327" font-size="9" fill="#999">send()</text>
+
+  <!-- LZ Endpoint ETH -->
+  <rect x="85" y="340" width="240" height="38" rx="6" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5" />
+  <text x="205" y="358" text-anchor="middle" font-size="11" fill="#6a4c93"><tspan font-weight="bold">LZ EndpointV2</tspan></text>
+  <text x="205" y="373" text-anchor="middle" font-size="9" fill="#9673a6">0x1a44076050125825900e736c501f859c50fE728c</text>
+
+  <!-- ===== LAYERZERO MESSAGING CENTER ===== -->
+  <rect x="430" y="120" width="460" height="250" rx="12" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" />
+  <text x="660" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#6a4c93">LayerZero V2 Messaging</text>
+
+  <!-- DVN Box -->
+  <rect x="455" y="165" width="410" height="85" rx="8" fill="#fff" stroke="#9673a6" stroke-width="1" />
+  <text x="660" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#6a4c93">Dual DVN Verification</text>
+
+  <!-- LZ DVN -->
+  <rect x="470" y="195" width="185" height="42" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="562" y="213" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">LayerZero Labs DVN</text>
+  <text x="562" y="228" text-anchor="middle" font-size="9" fill="#999">0x589dEDbD617F7E266a...</text>
+
+  <!-- Google DVN -->
+  <rect x="665" y="195" width="185" height="42" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="757" y="213" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Google Cloud DVN</text>
+  <text x="757" y="228" text-anchor="middle" font-size="9" fill="#999">0xD56e4eAb23cb81f43...</text>
+
+  <!-- Confirmations -->
+  <rect x="455" y="265" width="410" height="55" rx="6" fill="#fff" stroke="#9673a6" stroke-width="1" />
+  <text x="470" y="283" font-size="11" fill="#333">ETH → L2: <tspan font-weight="bold">15</tspan> confirmations (send)</text>
+  <text x="470" y="298" font-size="11" fill="#333">L2 → ETH: <tspan font-weight="bold">5</tspan> send / <tspan font-weight="bold">15</tspan> receive</text>
+  <text x="470" y="313" font-size="11" fill="#333">L2 ↔ L2: <tspan font-weight="bold">5</tspan> both directions</text>
+
+  <!-- 12 Pathways note -->
+  <rect x="475" y="335" width="370" height="45" rx="6" fill="#fff" stroke="#9673a6" stroke-width="1" stroke-dasharray="4 3" />
+  <text x="660" y="353" text-anchor="middle" font-size="11" font-weight="bold" fill="#6a4c93">12 Directional Pathways</text>
+  <text x="660" y="370" text-anchor="middle" font-size="10" fill="#888">ETH↔ARB · ETH↔BASE · ETH↔OP · ARB↔BASE · ARB↔OP · BASE↔OP</text>
+
+  <!-- ===== ARBITRUM ===== -->
+  <rect x="960" y="75" width="280" height="135" rx="12" fill="#d5e8d4" stroke="#82b366" stroke-width="2" />
+  <text x="1100" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Arbitrum</text>
+
+  <rect x="980" y="110" width="240" height="55" rx="8" fill="#fff" stroke="#82b366" stroke-width="1.5" />
+  <text x="1100" y="131" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">BridgeOFT</text>
+  <text x="1100" y="148" text-anchor="middle" font-size="11" fill="#666">(burn / mint)</text>
+  <text x="1100" y="161" text-anchor="middle" font-size="9" fill="#999">0x4dBBdC8CE1267c170E5aB37831cdC9870f386Dc9</text>
+
+  <rect x="1010" y="175" width="180" height="25" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1" />
+  <text x="1100" y="192" text-anchor="middle" font-size="10" font-weight="bold" fill="#6a4c93">LZ EndpointV2</text>
+
+  <!-- ===== BASE ===== -->
+  <rect x="960" y="235" width="280" height="135" rx="12" fill="#d5e8d4" stroke="#82b366" stroke-width="2" />
+  <text x="1100" y="260" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Base</text>
+
+  <rect x="980" y="270" width="240" height="55" rx="8" fill="#fff" stroke="#82b366" stroke-width="1.5" />
+  <text x="1100" y="291" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">BridgeOFT</text>
+  <text x="1100" y="308" text-anchor="middle" font-size="11" fill="#666">(burn / mint)</text>
+  <text x="1100" y="321" text-anchor="middle" font-size="9" fill="#999">0x4dBBdC8CE1267c170E5aB37831cdC9870f386Dc9</text>
+
+  <rect x="1010" y="335" width="180" height="25" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1" />
+  <text x="1100" y="352" text-anchor="middle" font-size="10" font-weight="bold" fill="#6a4c93">LZ EndpointV2</text>
+
+  <!-- ===== OPTIMISM ===== -->
+  <rect x="960" y="395" width="280" height="135" rx="12" fill="#d5e8d4" stroke="#82b366" stroke-width="2" />
+  <text x="1100" y="420" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">Optimism</text>
+
+  <rect x="980" y="430" width="240" height="55" rx="8" fill="#fff" stroke="#82b366" stroke-width="1.5" />
+  <text x="1100" y="451" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">BridgeOFT</text>
+  <text x="1100" y="468" text-anchor="middle" font-size="11" fill="#666">(burn / mint)</text>
+  <text x="1100" y="481" text-anchor="middle" font-size="9" fill="#999">0x4dBBdC8CE1267c170E5aB37831cdC9870f386Dc9</text>
+
+  <rect x="1010" y="495" width="180" height="25" rx="4" fill="#e1d5e7" stroke="#9673a6" stroke-width="1" />
+  <text x="1100" y="512" text-anchor="middle" font-size="10" font-weight="bold" fill="#6a4c93">LZ EndpointV2</text>
+
+  <!-- ===== CROSS-CHAIN ARROWS ===== -->
+  <!-- ETH → LZ Messaging -->
+  <line x1="370" y1="359" x2="430" y2="280" stroke="#9673a6" stroke-width="2.5" marker-end="url(#arrow-purple)" marker-start="url(#arrow-purple-rev)" />
+
+  <!-- LZ Messaging → Arbitrum -->
+  <line x1="890" y1="190" x2="960" y2="188" stroke="#9673a6" stroke-width="2.5" marker-end="url(#arrow-purple)" marker-start="url(#arrow-purple-rev)" />
+
+  <!-- LZ Messaging → Base -->
+  <line x1="890" y1="260" x2="960" y2="335" stroke="#9673a6" stroke-width="2.5" marker-end="url(#arrow-purple)" marker-start="url(#arrow-purple-rev)" />
+
+  <!-- LZ Messaging → Optimism -->
+  <line x1="890" y1="320" x2="960" y2="495" stroke="#9673a6" stroke-width="2.5" marker-end="url(#arrow-purple)" marker-start="url(#arrow-purple-rev)" />
+
+  <!-- L2 ↔ L2 dashed arrows -->
+  <line x1="1270" y1="210" x2="1270" y2="235" stroke="#82b366" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow-green)" marker-start="url(#arrow-green-rev)" />
+  <line x1="1270" y1="370" x2="1270" y2="395" stroke="#82b366" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow-green)" marker-start="url(#arrow-green-rev)" />
+  <path d="M 1290 210 Q 1360 302 1290 395" stroke="#82b366" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arrow-green)" marker-start="url(#arrow-green-rev)" />
+
+  <!-- ===== FRONTEND GROUP ===== -->
+  <rect x="40" y="560" width="880" height="190" rx="12" fill="#fff2cc" stroke="#d6b656" stroke-width="2" />
+  <text x="480" y="588" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d3b">React Frontend  —  React 18 + Vite 5 + TypeScript + Tailwind CSS</text>
+
+  <!-- Components -->
+  <rect x="60" y="605" width="175" height="60" rx="6" fill="#fff" stroke="#d6b656" stroke-width="1" />
+  <text x="147" y="623" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">BridgeForm</text>
+  <text x="147" y="638" text-anchor="middle" font-size="9" fill="#888">ChainSelector · AmountInput</text>
+  <text x="147" y="651" text-anchor="middle" font-size="9" fill="#888">FeeQuote · BridgeButton</text>
+
+  <rect x="250" y="605" width="155" height="60" rx="6" fill="#fff" stroke="#d6b656" stroke-width="1" />
+  <text x="327" y="623" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">MultiChainBalance</text>
+  <text x="327" y="638" text-anchor="middle" font-size="9" fill="#888">4-chain balanceOf</text>
+  <text x="327" y="651" text-anchor="middle" font-size="9" fill="#888">30s polling</text>
+
+  <rect x="420" y="605" width="155" height="60" rx="6" fill="#fff" stroke="#d6b656" stroke-width="1" />
+  <text x="497" y="623" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">TxTracker</text>
+  <text x="497" y="638" text-anchor="middle" font-size="9" fill="#888">LZ Scan API polling</text>
+  <text x="497" y="651" text-anchor="middle" font-size="9" fill="#888">localStorage history</text>
+
+  <rect x="590" y="605" width="130" height="60" rx="6" fill="#ffe6cc" stroke="#d6b656" stroke-width="1" stroke-dasharray="4 3" />
+  <text x="655" y="623" text-anchor="middle" font-size="12" font-weight="bold" fill="#8a6d3b">FaucetButton</text>
+  <text x="655" y="641" text-anchor="middle" font-size="9" fill="#888">testnet only</text>
+
+  <rect x="735" y="605" width="160" height="60" rx="6" fill="#fff" stroke="#d6b656" stroke-width="1" />
+  <text x="815" y="623" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">ConnectButton</text>
+  <text x="815" y="638" text-anchor="middle" font-size="9" fill="#888">Web3Modal / wagmi</text>
+  <text x="815" y="651" text-anchor="middle" font-size="9" fill="#888">MetaMask · WalletConnect</text>
+
+  <!-- Hooks row -->
+  <text x="60" y="690" font-size="10" fill="#999">Hooks (wagmi v2 + viem v2):</text>
+  <rect x="210" y="678" width="95" height="24" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="257" y="694" text-anchor="middle" font-size="10" font-weight="bold" fill="#555">useBridge</text>
+  <rect x="315" y="678" width="90" height="24" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="360" y="694" text-anchor="middle" font-size="10" font-weight="bold" fill="#555">useQuote</text>
+  <rect x="415" y="678" width="155" height="24" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="492" y="694" text-anchor="middle" font-size="10" font-weight="bold" fill="#555">useMultiChainBalances</text>
+  <rect x="580" y="678" width="120" height="24" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="640" y="694" text-anchor="middle" font-size="10" font-weight="bold" fill="#555">useApproveToken</text>
+  <rect x="710" y="678" width="110" height="24" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="765" y="694" text-anchor="middle" font-size="10" font-weight="bold" fill="#555">useTxTracking</text>
+
+  <!-- RPC calls label -->
+  <text x="480" y="730" text-anchor="middle" font-size="10" fill="#999">quoteSend() · send() · balanceOf() · approve() · faucet()</text>
+
+  <!-- Arrow: Frontend → Contracts -->
+  <line x1="300" y1="560" x2="300" y2="420" stroke="#d6b656" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- ===== DEPLOY ===== -->
+  <rect x="960" y="590" width="280" height="55" rx="8" fill="#f5f5f5" stroke="#666" stroke-width="1.5" />
+  <text x="1100" y="613" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Cloudflare Pages</text>
+  <text x="1100" y="632" text-anchor="middle" font-size="10" fill="#666">bridge-app-erc.pages.dev</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="960" y="670" width="280" height="120" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="1" />
+  <text x="980" y="692" font-size="12" font-weight="bold" fill="#333">Legend</text>
+
+  <rect x="975" y="702" width="16" height="12" rx="2" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1" />
+  <text x="1000" y="713" font-size="11" fill="#555">Ethereum (home chain)</text>
+
+  <rect x="975" y="722" width="16" height="12" rx="2" fill="#d5e8d4" stroke="#82b366" stroke-width="1" />
+  <text x="1000" y="733" font-size="11" fill="#555">L2 chains (BridgeOFT)</text>
+
+  <rect x="975" y="742" width="16" height="12" rx="2" fill="#e1d5e7" stroke="#9673a6" stroke-width="1" />
+  <text x="1000" y="753" font-size="11" fill="#555">LayerZero protocol</text>
+
+  <rect x="975" y="762" width="16" height="12" rx="2" fill="#fff2cc" stroke="#d6b656" stroke-width="1" />
+  <text x="1000" y="773" font-size="11" fill="#555">Frontend (React)</text>
+</svg>
