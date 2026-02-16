@@ -1,0 +1,23 @@
+.env
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+contracts/out/
+contracts/cache/
+contracts/artifacts/
+contracts/broadcast/
+contracts/deployments/
+apps/web/dist/
+apps/web/tsconfig.tsbuildinfo
+
+# Foundry
+contracts/lib/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
