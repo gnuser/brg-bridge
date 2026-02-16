@@ -1,0 +1,270 @@
+<mxfile host="app.diagrams.net" modified="2026-02-16T08:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="brg-bridge-arch" name="Architecture">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ========== TITLE ========== -->
+        <mxCell id="2" value="&lt;b&gt;BRG Bridge — Cross-Chain Architecture (LayerZero V2)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="440" y="20" width="520" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ETHEREUM GROUP ========== -->
+        <mxCell id="10" value="&lt;b&gt;Ethereum (Home Chain)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="320" height="340" as="geometry" />
+        </mxCell>
+
+        <!-- BridgeToken -->
+        <mxCell id="11" value="&lt;b&gt;BridgeToken&lt;/b&gt;&lt;br&gt;(ERC20 — BRG)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;1M supply · 18 decimals&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="10">
+          <mxGeometry x="30" y="50" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Faucet -->
+        <mxCell id="12" value="&lt;b&gt;faucet()&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;1,000 BRG per call (testnet)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;dashed=1;" vertex="1" parent="10">
+          <mxGeometry x="30" y="130" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- BridgeOFTAdapter -->
+        <mxCell id="13" value="&lt;b&gt;BridgeOFTAdapter&lt;/b&gt;&lt;br&gt;(lock / unlock)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0xECC80fc...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="10">
+          <mxGeometry x="30" y="200" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: BridgeToken → Adapter -->
+        <mxCell id="14" value="approve + lock" style="endArrow=block;endFill=1;html=1;fontSize=10;fontColor=#666666;" edge="1" source="11" target="13" parent="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- LZ Endpoint Ethereum -->
+        <mxCell id="15" value="&lt;b&gt;LZ EndpointV2&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0x1a44076...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="10">
+          <mxGeometry x="60" y="280" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow: Adapter → Endpoint -->
+        <mxCell id="16" value="send()" style="endArrow=block;endFill=1;html=1;fontSize=10;fontColor=#666666;" edge="1" source="13" target="15" parent="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== LAYERZERO MESSAGING ========== -->
+        <mxCell id="20" value="&lt;b&gt;LayerZero V2 Messaging&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#e1d5e7;strokeColor=#9673a6;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="480" y="160" width="440" height="220" as="geometry" />
+        </mxCell>
+
+        <!-- DVN Box -->
+        <mxCell id="21" value="&lt;b&gt;Dual DVN Verification&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;verticalAlign=top;container=1;collapsible=0;" vertex="1" parent="20">
+          <mxGeometry x="30" y="50" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="22" value="&lt;b&gt;LayerZero Labs DVN&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0x589dEDb...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="21">
+          <mxGeometry x="10" y="30" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="23" value="&lt;b&gt;Google Cloud DVN&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0xD56e4eA...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="21">
+          <mxGeometry x="200" y="30" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Confirmations -->
+        <mxCell id="24" value="&lt;font style=&quot;font-size:11px&quot;&gt;ETH→L2: &lt;b&gt;15&lt;/b&gt; confirmations&lt;br&gt;L2→ETH: &lt;b&gt;5&lt;/b&gt; send / &lt;b&gt;15&lt;/b&gt; receive&lt;br&gt;L2↔L2: &lt;b&gt;5&lt;/b&gt; both directions&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="20">
+          <mxGeometry x="30" y="150" width="380" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ARBITRUM GROUP ========== -->
+        <mxCell id="30" value="&lt;b&gt;Arbitrum&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="80" width="260" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="31" value="&lt;b&gt;BridgeOFT&lt;/b&gt;&lt;br&gt;(burn / mint)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0x4dBBdC8...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" vertex="1" parent="30">
+          <mxGeometry x="20" y="45" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="32" value="&lt;b&gt;LZ EndpointV2&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="30">
+          <mxGeometry x="40" y="115" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ========== BASE GROUP ========== -->
+        <mxCell id="40" value="&lt;b&gt;Base&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="280" width="260" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="41" value="&lt;b&gt;BridgeOFT&lt;/b&gt;&lt;br&gt;(burn / mint)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0x4dBBdC8...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" vertex="1" parent="40">
+          <mxGeometry x="20" y="45" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="42" value="&lt;b&gt;LZ EndpointV2&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="40">
+          <mxGeometry x="40" y="115" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ========== OPTIMISM GROUP ========== -->
+        <mxCell id="50" value="&lt;b&gt;Optimism&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="480" width="260" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="51" value="&lt;b&gt;BridgeOFT&lt;/b&gt;&lt;br&gt;(burn / mint)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;0x4dBBdC8...&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="20" y="45" width="220" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="52" value="&lt;b&gt;LZ EndpointV2&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="50">
+          <mxGeometry x="40" y="115" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CROSS-CHAIN ARROWS ========== -->
+
+        <!-- ETH Endpoint → LZ Messaging -->
+        <mxCell id="60" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="410" as="sourcePoint" />
+            <mxPoint x="480" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LZ Messaging → Arbitrum -->
+        <mxCell id="61" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="230" as="sourcePoint" />
+            <mxPoint x="1020" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LZ Messaging → Base -->
+        <mxCell id="62" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="310" as="sourcePoint" />
+            <mxPoint x="1020" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LZ Messaging → Optimism -->
+        <mxCell id="63" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="360" as="sourcePoint" />
+            <mxPoint x="1020" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- L2 ↔ L2 arrows -->
+        <mxCell id="64" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1310" y="240" as="sourcePoint" />
+            <mxPoint x="1310" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="65" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#82b366;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1310" y="440" as="sourcePoint" />
+            <mxPoint x="1310" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="66" value="" style="endArrow=block;endFill=1;startArrow=block;startFill=1;html=1;strokeColor=#82b366;strokeWidth=1;dashed=1;curved=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="240" as="sourcePoint" />
+            <mxPoint x="1340" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1400" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== FRONTEND GROUP ========== -->
+        <mxCell id="70" value="&lt;b&gt;React Frontend&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;container=1;collapsible=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="80" y="520" width="840" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="71" value="&lt;b&gt;BridgeForm&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;ChainSelector · AmountInput&lt;br&gt;FeeQuote · BridgeButton&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="70">
+          <mxGeometry x="20" y="50" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="72" value="&lt;b&gt;MultiChainBalance&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;4-chain balanceOf&lt;br&gt;30s polling&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="70">
+          <mxGeometry x="220" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="73" value="&lt;b&gt;TxTracker&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;LZ Scan API polling&lt;br&gt;localStorage history&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="70">
+          <mxGeometry x="400" y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="74" value="&lt;b&gt;FaucetButton&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;testnet only&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;dashed=1;" vertex="1" parent="70">
+          <mxGeometry x="580" y="50" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Hooks row -->
+        <mxCell id="75" value="&lt;b&gt;useBridge&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="70">
+          <mxGeometry x="20" y="145" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="76" value="&lt;b&gt;useQuote&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="70">
+          <mxGeometry x="145" y="145" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="77" value="&lt;b&gt;useMultiChainBalances&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="70">
+          <mxGeometry x="270" y="145" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="78" value="&lt;b&gt;useApproveToken&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="70">
+          <mxGeometry x="445" y="145" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="79" value="&lt;b&gt;useTxTracking&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="70">
+          <mxGeometry x="590" y="145" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Hooks label -->
+        <mxCell id="80" value="&lt;font style=&quot;font-size:11px;color:#666666&quot;&gt;React Hooks (wagmi v2 + viem v2)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="70">
+          <mxGeometry x="20" y="175" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend → Contracts arrow -->
+        <mxCell id="81" value="&lt;font style=&quot;font-size:10px&quot;&gt;quoteSend() · send() · balanceOf() · approve()&lt;/font&gt;" style="endArrow=block;endFill=1;html=1;strokeColor=#d6b656;strokeWidth=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="70">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== DEPLOY TARGET ========== -->
+        <mxCell id="90" value="&lt;b&gt;Cloudflare Pages&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;bridge-app-erc.pages.dev&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="790" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ========== LEGEND ========== -->
+        <mxCell id="100" value="&lt;b&gt;Legend&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;container=1;collapsible=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="690" width="280" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="101" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="100">
+          <mxGeometry x="10" y="35" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="102" value="Ethereum (home chain)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="100">
+          <mxGeometry x="35" y="30" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="103" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="100">
+          <mxGeometry x="10" y="60" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="104" value="L2 chains (OFT)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="100">
+          <mxGeometry x="35" y="55" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="105" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="100">
+          <mxGeometry x="10" y="85" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="106" value="LayerZero protocol" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="100">
+          <mxGeometry x="35" y="80" width="130" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="107" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="100">
+          <mxGeometry x="10" y="110" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="108" value="Frontend (React)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="100">
+          <mxGeometry x="35" y="105" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ========== 12 PATHWAYS NOTE ========== -->
+        <mxCell id="110" value="&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;12 Directional Pathways&lt;/b&gt;&lt;br&gt;ETH ↔ ARB · ETH ↔ BASE · ETH ↔ OP&lt;br&gt;ARB ↔ BASE · ARB ↔ OP · BASE ↔ OP&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;fontSize=11;align=center;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="420" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ========== TECH STACK NOTE ========== -->
+        <mxCell id="120" value="&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;Stack&lt;/b&gt;&lt;br&gt;Contracts: Solidity + Foundry + Hardhat&lt;br&gt;Frontend: React 18 + Vite 5 + TypeScript&lt;br&gt;Web3: wagmi 2 + viem 2 + Web3Modal&lt;br&gt;Styling: Tailwind CSS 3&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="520" width="280" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
